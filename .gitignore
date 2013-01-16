@@ -1,0 +1,14 @@
+example/gsaexample/*.xcodeproj/*.mode1v3
+example/gsaexample/*.xcodeproj/*.mode2v3
+example/gsaexample/*.xcodeproj/*.pbxuser
+example/gsaexample/*.xcodeproj/*.perspectivev3
+example/gsaexample/*.xcodeproj/xcuserdata/*
+example/gsaexample/*.xcodeproj/*/xcuserdata/*
+example/gsaexample/*.xcodeproj/project.xcworkspace/*
+*.pyc
+*.xcuserstate
+*.swp
+*~.nib
+.DS_Store
+
+
