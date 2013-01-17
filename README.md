@@ -1,7 +1,9 @@
 Summary
 =======
 
-GSAutomation is built on top of UIAutomation and aims to make test automation easier.
+GSAutomation is an extension to UIAutomation and aims to make test automation easier to use and maintain, and also keep the test scripts more robust.
+
+You can define test tasks in simple javascript arrays, and get them executed with some handy helper methods.
 
 
 Work Flow
@@ -132,7 +134,7 @@ There are a number of helper methods provided by GSAutomation to make UIAutomati
         // ...
     }
 
-To use some device-dependent logic, simply to something like:
+To use some device-dependent logic, simply do something like:
 
     var item = isPad() ? "iPad text" : "iPhone text";
 
@@ -141,5 +143,5 @@ To print some debug log, simply do
 
     log("some text");
 
-Please refer to GSAutomation/library.js to see all the supported helper methods.
+Please refer to GSAutomation/lib/gsautomation.js to see all the supported helper methods.
 
