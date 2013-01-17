@@ -7,7 +7,7 @@ GSAutomation is built on top of UIAutomation and aims to make test automation ea
 Work Flow
 =========
 
-1. Import GSAutomation/library.js
+1. Import GSAutomation/lib/gsautomation.js
 2. Define some task arrays
 3. In the main test method, call performTask
 
@@ -73,7 +73,10 @@ Supported Actions
         <td>ActionInput</td><td>Type some text. Use after a text field/area is selected.</td><td>Text to type</td><td>Yes</td>
     </tr>
     <tr>
-        <td>ActionScroll</td><td>Swipe on the element.</td><td>Direction.Up, Direction.Down, Direction.Left, or Direction.Right</td><td>No</td>
+        <td>ActionScroll</td><td>Swipe slowly from the screen center or within an element.</td><td>Direction.Up, Direction.Down, Direction.Left, or Direction.Right. Optionally add a next parameter to specify the element to scroll at.</td><td>No</td>
+    </tr>
+    <tr>
+        <td>ActionSwipe</td><td>Swipe quickly from the screen center or within an element.</td><td>Direction.Up, Direction.Down, Direction.Left, or Direction.Right. Optionally add a next parameter to specify the element to scroll at.</td><td>No</td>
     </tr>
     <tr>
         <td>ActionTapPoint</td><td>Tap on a point.</td><td>A point. e.g. {x:100, y:100}</td><td>No</td>
