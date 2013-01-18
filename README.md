@@ -18,8 +18,8 @@ Example
 
     #import "GSAutomation/library.js"
     var task1 = [
-        [ActionTap, "Button1"],
-        [ActionCheck, "Text1", "Text2"],
+        [Tap, "Button1"],
+        [Check, "Text1", "Text2"],
     ];
 
     function main() {        
@@ -36,23 +36,23 @@ A task array is an array of steps. Each step is an array, with action name as th
 
 For example
 
-    [ActionTap, "Button1"]
+    [Tap, "Button1"]
 
 means tap the button named "Button1".
 
-    [ActionCheck, "Text1", "Text2"]
+    [Check, "Text1", "Text2"]
 
 means check if "Text1" and "Text2" both exist. If not, throw an error and fail the test.
 
 There will be a 1 second delay between each two actions, and for each action a maximum of 10 second delay is allow for the first element to appear. (e.g. after tapping "Button1", up to 10 second is allowed for "Text1" to appear.)
 
-Some actions allow a rescue step, e.g. we can insert an action/step as the last parameter of ActionTap step:
+Some actions allow a rescue step, e.g. we can insert an action/step as the last parameter of Tap step:
 
-    [ActionTap, "Button1", [ActionTap, "Button2"]]
+    [Tap, "Button1", [Tap, "Button2"]]
 
 This means that if we failed to tap "Button1", we can try tapping "Button2" first and then try tapping "Button1" again. The rescue step is always going to be an optional parameter at the end of the action/step array.
 
-Sometimes you'll find it hard to determine how the views are organized, e.g. if the button is inside a popover, you should do [ActionTap, "((Popover))::Button1"]. So in order to investigate the current view hierarchy, use a step [ActionInvestigate].
+Sometimes you'll find it hard to determine how the views are organized, e.g. if the button is inside a popover, you should do [Tap, "((Popover))::Button1"]. So in order to investigate the current view hierarchy, use a step [Investigate].
 
 
 Supported Actions
@@ -63,37 +63,37 @@ Supported Actions
         <td>Action</td><td>Meaning</td><td>Parameters</td><td>Allow rescue?</td>
     </tr>
     <tr>
-        <td>ActionTap</td><td>Tapping an element</td><td>the element (2nd item)</td><td>Yes</td>
+        <td>Tap</td><td>Tapping an element</td><td>the element (2nd item)</td><td>Yes</td>
     </tr>
     <tr>
-        <td>ActionCheck</td><td>Check existence of some elements</td><td>a list of elements (2nd, 3rd.. items)</td><td>No</td>
+        <td>Check</td><td>Check existence of some elements</td><td>a list of elements (2nd, 3rd.. items)</td><td>No</td>
     </tr>
     <tr>
-        <td>ActionInvestigate</td><td>Investigate the current layout (children elements of the window or an element)</td><td>optionally an element to start investigating. If there's no param then the investigation is done for the main window</td><td>No</td>
+        <td>Investigate</td><td>Investigate the current layout (children elements of the window or an element)</td><td>optionally an element to start investigating. If there's no param then the investigation is done for the main window</td><td>No</td>
     </tr>
     <tr>
-        <td>ActionInput</td><td>Type some text. Use after a text field/area is selected.</td><td>Text to type</td><td>Yes</td>
+        <td>Input</td><td>Type some text. Use after a text field/area is selected.</td><td>Text to type</td><td>Yes</td>
     </tr>
     <tr>
-        <td>ActionScroll</td><td>Swipe slowly from the screen center or within an element.</td><td>Direction.Up, Direction.Down, Direction.Left, or Direction.Right. Optionally add a next parameter to specify the element to scroll at.</td><td>No</td>
+        <td>Scroll</td><td>Swipe slowly from the screen center or within an element.</td><td>Direction.Up, Direction.Down, Direction.Left, or Direction.Right. Optionally add a next parameter to specify the element to scroll at.</td><td>No</td>
     </tr>
     <tr>
-        <td>ActionSwipe</td><td>Swipe quickly from the screen center or within an element.</td><td>Direction.Up, Direction.Down, Direction.Left, or Direction.Right. Optionally add a next parameter to specify the element to scroll at.</td><td>No</td>
+        <td>Swipe</td><td>Swipe quickly from the screen center or within an element.</td><td>Direction.Up, Direction.Down, Direction.Left, or Direction.Right. Optionally add a next parameter to specify the element to scroll at.</td><td>No</td>
     </tr>
     <tr>
-        <td>ActionTapPoint</td><td>Tap on a point.</td><td>A point. e.g. {x:100, y:100}</td><td>No</td>
+        <td>TapPoint</td><td>Tap on a point.</td><td>A point. e.g. {x:100, y:100}</td><td>No</td>
     </tr>
     <tr>
-        <td>ActionPick</td><td>Select a value in a picker wheel</td><td>the picker wheel element as the 2nd item, and the value to select as the 3rd item</td><td>Yes</td>
+        <td>Pick</td><td>Select a value in a picker wheel</td><td>the picker wheel element as the 2nd item, and the value to select as the 3rd item</td><td>Yes</td>
     </tr>
     <tr>
-        <td>ActionTryTap</td><td>Similar to ActionTap, but allows failure. (e.g. if the button is not tappable, it won't fail the test.)</td><td>the button as the 2nd item</td><td>No</td>
+        <td>TryTap</td><td>Similar to Tap, but allows failure. (e.g. if the button is not tappable, it won't fail the test.)</td><td>the button as the 2nd item</td><td>No</td>
     </tr>
     <tr>
-        <td>ActionWait</td><td>Wait for some additional time. This action is normally unnecessary since a 1-second wait is applied automatically before every step. Use this only to add addition waiting time.</td><td>Time to wait (seconds).</td><td>No</td>
+        <td>Wait</td><td>Wait for some additional time. This action is normally unnecessary since a 1-second wait is applied automatically before every step. Use this only to add addition waiting time.</td><td>Time to wait (seconds).</td><td>No</td>
     </tr>
     <tr>
-        <td>ActionWaitFor</td><td>Wait for some additional time until an element appears. This action is normally unnecessary since a maximum of 10-second wait is applied automatically in order to access an element. Use this only to add addition waiting time.</td><td>2nd item is the element to wait for, and the 3rd item is the maximum time to wait (seconds).</td><td>No</td>
+        <td>WaitFor</td><td>Wait for some additional time until an element appears. This action is normally unnecessary since a maximum of 10-second wait is applied automatically in order to access an element. Use this only to add addition waiting time.</td><td>2nd item is the element to wait for, and the 3rd item is the maximum time to wait (seconds).</td><td>No</td>
     </tr>
 </table>
 
@@ -107,9 +107,9 @@ To specify the type of the element, we can use the format "((type))name". Type n
 
 When there are multiple items matching the same type and name, we can do something like "((TableCell))[[1]]" to specify an index. The index is 0 based.
 
-To investigate the current hierarchy and available elements, insert a step [ActionInvestigate].
+To investigate the current hierarchy and available elements, insert a step [Investigate].
 
-For example, if you see this from [ActionInvestigate]:
+For example, if you see this from [Investigate]:
 
     [null] [object UIAWindow] @ (0, 0) w=768, h=1024
     [null] [object UIAPopover] @ (492, 471) w=266, h=434
