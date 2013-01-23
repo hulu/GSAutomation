@@ -12,6 +12,14 @@ var task = [
 ];
 
 function main() {
+    GlobalEnv.EnableTableGroup = true;
+    // note: table groups are disabled and invisible by default since searching them is very slow
+    // for many apps this is unnecessary if the table groups are not going to be checked
+
+    // start the test steps
     performTask(task);
+
+    // display the result so that instruments can mark the test in green or red
+    // note: this is also optional, since performTask will log the result of each step
     displayResult();
 }
