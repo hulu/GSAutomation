@@ -69,7 +69,7 @@ Supported Actions
         <td>Check</td><td>Check existence of some elements</td><td>a list of elements (2nd, 3rd.. items)</td><td>No</td>
     </tr>
         <tr>
-        <td>CheckButtonEnable</td><td>Check if the Button is Enable</td><td>The button element</td><td>No</td>
+        <td>CheckButtonEnabled</td><td>Check if the button is enabled</td><td>The button element, then followed by true or false. (true means that we want this button to be enabled; false means that we want this button to be disabled.)</td><td>No</td>
     </tr>
     <tr>
         <td>Investigate</td><td>Investigate the current layout (children elements of the window or an element)</td><td>optionally an element to start investigating. If there's no param then the investigation is done for the main window</td><td>No</td>
@@ -148,3 +148,26 @@ To print some debug log, simply do
 
 Please refer to GSAutomation/lib/gsautomation.js to see all the supported helper methods.
 
+
+
+License
+==========
+Copyright (C) 2013 by Hulu, LLC
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
