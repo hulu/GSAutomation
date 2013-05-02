@@ -1,3 +1,10 @@
+//
+//  gsaexample-test.js
+//  GSAExample
+//
+//  Created by Bao Lei.
+//  Copyright (c) 2013 Hulu. All rights reserved. See LICENSE.txt.
+//
 
 var task = [
     // [Investigate], // Investigate is use to determine what's on screen when you don't know how to start
