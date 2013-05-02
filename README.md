@@ -68,6 +68,9 @@ Supported Actions
     <tr>
         <td>Check</td><td>Check existence of some elements</td><td>a list of elements (2nd, 3rd.. items)</td><td>No</td>
     </tr>
+        <tr>
+        <td>CheckButtonEnable</td><td>Check if the Button is Enable</td><td>The button element</td><td>No</td>
+    </tr>
     <tr>
         <td>Investigate</td><td>Investigate the current layout (children elements of the window or an element)</td><td>optionally an element to start investigating. If there's no param then the investigation is done for the main window</td><td>No</td>
     </tr>
