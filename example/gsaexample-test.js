@@ -8,9 +8,10 @@
 
 var taskView1 = [
     // [Investigate], // Investigate is use to determine what's on screen when you don't know how to start
-    [Feature, "Testing the main view"],
+    [Feature, "Test the main view"],
     [Check, "An example of", "Open New Window"],
     [Tap, "((TextField))"],
+    [Feature, "Test typing"],
     [Input, "Apple Orange Banana Strawberry\n"],
     // [CheckButtonEnabled, "Open New Window", false], // Enabling this line will fail the test
     // [Tap, "Open Wrong Window"], // Enabling this line will fail the test
@@ -18,7 +19,7 @@ var taskView1 = [
 ];
 
 var taskView2 = [
-    [Feature, "Testing the modal view"],
+    [Feature, "Test the modal view"],
     [Note, "This is the view that pops up when you hit the button from the home page"],
     [Check, "A modal view"],
     [Check, "((TableView))::Apple", "((TableView))::((TableCell))A", "((TableView))::((TableCell))p[[1]]"],
